@@ -17,7 +17,6 @@ import { BiLogOutCircle } from "react-icons/bi";
 import fetchData from "@/utils/fetchData";
 import { toast } from "react-toastify";
 
-git config [--global | --local] remote.origin.url new-url 
 function NavigationComponent() {
   const router = useRouter();
   const currentPath = usePathname();
