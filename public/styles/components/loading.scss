@@ -1,0 +1,36 @@
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexRow.scss" as flexRow;
+.loading-component {
+    @include flexRow.flexRow() {
+        justify-content: center;
+        align-items: center
+    }
+
+    ;
+    background-color: colors.$overlay;
+    position: fixed;
+    top:0;
+    z-index: 900;
+    width: 100vw;
+    height: 100vh;
+
+    .loading-icon {
+        width: 40px;
+        animation-name: spinner;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes spinner {
+        0% {
+            filter: hue-rotate(300deg)
+        }
+
+        100% {
+            transform: rotate(360deg);
+
+
+        }
+    }
+}

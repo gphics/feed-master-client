@@ -1,0 +1,14 @@
+@use "../components/profile-update-components.scss";
+@use "../utils/colors.scss" as colors;
+@use "../utils/btn.scss" as btnStyle;
+@use  "../utils/flexColumn.scss" as flexColumn;
+
+.profile-update-page{
+    // background-color: red;
+    @include flexColumn.flexColumn();
+    width:97vw;
+    margin:5px auto;
+
+
+    
+}

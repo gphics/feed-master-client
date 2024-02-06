@@ -1,0 +1,77 @@
+@use "../components/formula/create/formula-create-export.scss";
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/colors.scss" as colors;
+@use "../utils/btn.scss" as btnStyle;
+
+.formula-create-page {
+    width: 97vw;
+    margin: 10px auto;
+    // background-color: red;
+    @include flexColumn.flexColumn();
+
+    .note {
+        @include flexColumn.flexColumn();
+        margin: 10px 0;
+
+        h2 {
+            margin: 5px 0;
+            text-align: center;
+            text-transform: capitalize;
+
+        }
+
+        p {
+            font-size: .8em;
+
+            span {
+                font-weight: 700;
+                color: red
+            }
+
+            a {
+                font-style: italic;
+                // text-decoration: none;
+                color: colors.$black;
+
+            }
+        }
+    }
+
+
+}
+
+
+.formula-create-form {
+    @include flexColumn.flexColumn();
+
+    .current-form-controls-holder {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+
+            background-color: colors.$black;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            .icon {
+                color: colors.$green;
+                transform: scale(1.5);
+
+
+            }
+        }
+    }
+
+    .formula-create-btn {
+        width: max-content;
+        @include btnStyle.btnStyle();
+        padding: 10px 15px;
+        align-self: center;
+    }
+}

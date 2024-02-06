@@ -1,0 +1,40 @@
+@use "../components/formula/small-single-formula.scss";
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/btn.scss" as btnStyle;
+@use "../utils/colors.scss" as color;
+
+.my-formula-page {
+    @include flexColumn.flexColumn;
+
+    width: 98vw;
+    margin: 10px auto;
+
+    .create-formula-link {
+
+        @include btnStyle.btnStyle;
+        width: max-content;
+        padding: 10px
+    }
+
+    header {
+        @include flexColumn.flexColumn {
+            flex-direction: row;
+            justify-content: space-around
+        }
+
+        ;
+        margin:5px 0;
+
+    }
+
+    &.no-formula {
+        align-items: center;
+        margin: 20vh auto;
+
+        h3 {
+            color: red;
+            margin: 10px 0;
+            text-align: center;
+        }
+    }
+}

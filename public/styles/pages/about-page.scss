@@ -1,0 +1,25 @@
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/colors.scss" as colors;
+
+.about-page{
+    @include flexColumn.flexColumn();
+    width:97%;
+    margin:10px auto;
+    article.text{
+        margin:10px 0;
+    }
+    .hero{
+        @include flexColumn.flexColumn(){align-items: center};
+        img{
+            width:50%;
+            height: 50%;
+            max-width: 400px;
+            max-height: 400px;
+            margin: 10px 0;
+            &:hover{
+                filter: grayscale(1);
+                transform: scale(1.03);
+            }
+        }
+    }
+}

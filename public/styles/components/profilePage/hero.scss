@@ -1,0 +1,36 @@
+@use "../../utils/is-mobile.scss" as is-mobile;
+@use "../../utils/flexColumn.scss" as flexColumn;
+@use "../../utils/colors.scss" as colors;
+
+.user-hero-section {
+    @include flexColumn.flexColumn();
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+    img {
+        border-radius: 100%;
+        border: 5px solid transparent;
+        border-left-color: colors.$black;
+        border-bottom-color: colors.$black;
+
+        &:hover {
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-right-color: colors.$green;
+            border-top-color: colors.$green;
+        }
+    }
+
+    .edit-icon {
+                color: colors.$black;
+        transform: scale(1.2);
+        margin-top: 5px;
+        cursor: pointer;
+
+        &:hover {
+
+            color: colors.$green;
+        }
+    }
+}

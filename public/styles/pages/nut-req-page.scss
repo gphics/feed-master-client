@@ -1,0 +1,10 @@
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../components/nutReq/eachNutReq.scss";
+.nut-req-page{
+    margin:10px auto;
+    width:97vw;
+    @include flexColumn.flexColumn();
+    h3{
+        margin-left: 2%;
+    }
+}

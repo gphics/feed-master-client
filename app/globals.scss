@@ -1,0 +1,21 @@
+@font-face {
+    font-family: RegularFont;
+    src: url("../public/fonts/Montserrat-Regular.ttf");
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: RegularFont;
+    transition: all .5s;
+
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}

@@ -1,0 +1,33 @@
+@use "../utils/btn.scss" as btnStyle;
+@use "../utils/./flexColumn.scss" as flexColumn;
+
+.not-found-page {
+    width: 100vw;
+    height: 90vh;
+    @include flexColumn.flexColumn() {
+        justify-content: center;
+        align-items: center
+    }
+
+    ;
+
+    .not-found-image {
+        
+        margin-top: -10%;
+        width:70%;
+        height: 60%;
+        max-width: 650px;
+        @media (max-width:700px) {
+            width: 90%;
+            height: 60%;
+        }
+    }
+
+    .back-home-link {
+        @include btnStyle.btnStyle() {
+            padding: 10px 15px;
+        }
+
+        ;
+    }
+}

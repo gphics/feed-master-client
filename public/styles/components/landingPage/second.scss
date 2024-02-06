@@ -1,0 +1,59 @@
+@use "../../utils/colors.scss" as colors;
+@use "../../utils/flexColumn.scss" as flexColumn;
+@use "../../utils/is-mobile.scss" as is-mobile;
+
+.second-landing-page-component {
+    margin: 10px 0;
+
+    @include flexColumn.flexColumn() {
+        align-items: center
+    }
+
+    ;
+
+    .values {
+        display: flex;
+        width: 100%;
+        margin: 10px 0;
+        justify-content: space-around;
+
+        // background-color: red;
+        @include is-mobile.is-mobile() {
+
+            flex-direction: column;
+
+            .value {
+                width: 95%;
+                max-width: 95%;
+                margin: 10px auto
+            }
+        }
+    }
+
+    .value {
+        background-color: colors.$black;
+        color: colors.$green;
+        border-radius: 5px;
+        width: 32%;
+        max-width: 300px;
+        height: 150px;
+        font-size: .8em;
+        padding: 0 5px;
+
+        h4 {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        p {
+            padding: 0 1%
+        }
+
+        &:hover {
+            transform: scale(1.02);
+            color: colors.$white;
+        }
+
+    }
+
+}

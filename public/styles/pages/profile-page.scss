@@ -1,0 +1,6 @@
+@use "../components/profilePage/profile-page-component-export.scss";
+@use "../utils/flexColumn.scss" as flexColumn;
+.profile-page{
+    @include flexColumn.flexColumn();
+    width: 100vw;
+}

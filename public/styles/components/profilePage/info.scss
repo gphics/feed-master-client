@@ -1,0 +1,27 @@
+@use "../../utils/is-mobile.scss" as is-mobile;
+@use "../../utils/flexColumn.scss" as flexColumn;
+@use "../../utils/colors.scss" as colors;
+
+.user-info-section {
+    @include flexColumn.flexColumn();
+    width: 95%;
+    margin: 10px auto;
+
+    h3 {
+        background-color: colors.$green;
+        width: max-content;
+        padding: 5px 10px;
+        margin: 5px 0;
+    }
+
+    .each {
+        margin: 5px 0;
+        text-transform: capitalize;
+        width: max-content;
+        padding: 5px 10px;
+        // background-color: red;
+        .is-email{
+            text-transform: lowercase;
+        }
+    }
+}

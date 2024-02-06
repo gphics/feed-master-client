@@ -1,0 +1,51 @@
+@use "../../utils/flexRow.scss" as flexRow;
+@use "../../utils/is-mobile.scss" as is-mobile;
+
+.first-landing-page-component {
+    @include flexRow.flexRow() {
+        justify-content: space-between;
+        align-items: center
+    }
+
+    margin:10px 0;
+    ;
+
+    article {
+        width: 48%;
+        margin: 0 1%;
+        // background-color: red;
+    }
+
+    .second-intro {
+        @include flexRow.flexRow() {
+            justify-content: center
+        }
+
+        img {
+            width: 95%;
+            height: 70%;
+            max-width: 300px;
+            border-radius: 5px;
+
+            &:hover {
+                transform: scale(1.04);
+            }
+        }
+    }
+
+    @include is-mobile.is-mobile() {
+        flex-direction: column;
+
+        article {
+            width: 97%;
+            margin: 10px auto;
+            padding: 10px 5px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 100%;
+
+        }
+    }
+}

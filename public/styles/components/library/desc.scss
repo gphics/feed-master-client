@@ -1,0 +1,17 @@
+@use "../../utils/colors.scss" as colors;
+@use "../../utils/flexColumn.scss" as flexColumn;
+
+.description-component {
+    @include flexColumn.flexColumn();
+    margin: 10px 0;
+
+    h3 {
+        margin: 5px 0;
+    }
+
+    p {
+        text-indent: 10px;
+     
+        margin: 5px;
+    }
+}

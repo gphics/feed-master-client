@@ -1,0 +1,116 @@
+@use "../utils/flexRow.scss" as flexRow;
+@use "../utils/colors.scss" as colors;
+@use "../utils//is-mobile.scss" as is-mobile;
+@use "../utils/btn.scss" as btnStyle;
+
+.nav-component {
+    @include flexRow.flexRow() {
+        align-items: center
+    }
+
+
+    ;
+    background-color: colors.$black;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    padding:0 10px;
+    position: relative;
+}
+
+.nav-component header {
+    @include flexRow.flexRow() {
+        align-items: center;
+        justify-content:flex-end
+    }
+
+    overflow: hidden;
+    flex:1 1 auto;
+    height: 100%;
+   
+
+    .menu-bar {
+        fill: white;
+        color: colors.$green;
+        transform: scale(2);
+        margin-right: 2%;
+        display: none;
+
+        &:hover {
+            filter: grayscale(1);
+            cursor: pointer;
+            transform: scale(2.3);
+        }
+
+        @include is-mobile.is-mobile() {
+            display: block;
+        }
+    }
+}
+
+.link-holders {
+    width: 100%;
+    height: 100%;
+
+    @include flexRow.flexRow() {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: colors.$green;
+        font-size: .8em;
+
+        @include flexRow.flexRow() {
+            align-items: center;
+        }
+
+        ;
+
+        &.active,
+        &:hover {
+            font-size: .9em;
+            filter: grayscale(1);
+            font-weight: 700;
+        }
+    }
+
+    .link-icon {
+        display: none;
+    }
+
+    @include is-mobile.is-mobile() {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        height: 80vh;
+        width: 70vw;
+        background-color: colors.$black;
+        z-index: 800;
+
+        &.holder-hide {
+            right: -200%;
+            opacity: 0;
+        }
+
+        .nav-link {
+            width: 80%;
+            padding: 15px;
+
+            .link-icon {
+                margin-right: 15%;
+                display: block;
+                transform: scale(2);
+            }
+
+            border-radius: 5px;
+
+            &.active,
+            &:hover {
+                background-color: colors.$white;
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@use "../utils/flexRow.scss" as flexRow;
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/colors.scss" as colors;
+@use "../utils/is-mobile.scss" as is-mobile;
+
+@font-face {
+    font-family: RegularFont;
+    src: url("../../fonts/Montserrat-Regular.ttf");
+}
+
+.library-page {
+    @include flexColumn.flexColumn();
+    width: 97vw;
+    margin: 10px auto;
+    font-weight: RegularFont;
+
+    h3 {
+        margin: 10px 0;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .not-query {
+        margin: 20% auto;
+        text-align: center;
+        color: red
+    }
+}
+
+.library-search-form {
+    margin: 10px 0;
+    @include flexColumn.flexColumn();
+    align-items: flex-end;
+    margin-right: 5%;
+
+    input {
+        width: 200px;
+        height: 35px;
+        padding-left: 5px;
+        border: 3px solid black;
+        border-radius: 5px;
+        outline: none;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+}
+
+.short-ingredients {
+    @include flexRow.flexRow() {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    margin:10px 0;
+    width:100%;
+
+    .each-short-ing {
+        width: 40%;
+        text-decoration: none;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+
+        background: colors.$black;
+        margin:10px 0;
+        max-width:350px;
+        @include flexColumn.flexColumn();
+        align-items: center;
+        border-radius: 5px;
+        color:colors.$white;
+
+        img {
+
+            // margin: 2px auto;
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        article {
+            margin: 5px 0;
+            padding: 0 5px;
+
+            h4 {
+                font-size: .8em;
+                margin: 5px 0;
+            }
+        }
+    }
+
+    @include is-mobile.is-mobile() {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        .each-short-ing {
+            width: 97%;
+        }
+    }
+}

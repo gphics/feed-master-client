@@ -1,0 +1,122 @@
+@use "../../../utils/colors.scss" as colors;
+@use "../../../utils/flexColumn.scss" as flexColumn;
+@use "../../../utils/btn.scss" as btnStyle;
+@use "../../../utils/default-formula-input.scss" as default-inp;
+
+.each-from-input {
+    @include flexColumn.flexColumn();
+    background-color: colors.$overlay;
+    margin: 10px 0;
+    width: 40%;
+    max-width: 350px;
+    align-items: center;
+
+    // padding:10px 20px;
+    .input-delete-btn {
+        @include btnStyle.btnStyle();
+        padding: 10px 15px;
+        background-color: red;
+        width: max-content;
+        color: colors.$black;
+        margin: 5px 0;
+    }
+
+    .select-input-holder {
+        aside {
+            width: 98%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+
+            button {
+                background-color: colors.$green;
+                border: none;
+                
+                width: max-content;
+                padding: 5px 10px;
+                // height: 20px;
+                text-align: center;
+
+                &:hover {
+                    transform: scale(1.01)
+                }
+
+            }
+
+            small {
+                font-weight: bold;
+            }
+        }
+
+        margin: 5px 0;
+        @include flexColumn.flexColumn();
+        align-items: center;
+        height: 100px;
+        // background-color: red;
+        justify-content: space-around;
+        width:96%;
+
+        label {
+            font-size: .8em;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin: 5px 0;
+            width: 98%;
+
+            span {
+                color: red
+            }
+        }
+
+        select {
+            background-color: colors.$black;
+            color: colors.$white;
+            height: 45px;
+            width: 98%;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+            flex: 0 0 auto;
+
+            &:hover {
+                transform: scale(1.02)
+            }
+
+            &:focus {
+                outline: none
+            }
+        }
+
+        .input-in-select {
+            width: 96%;
+
+            input {
+                width: 100%;
+                flex: 1 1 auto;
+                height: 45px;
+                padding-left: 5px;
+                background-color: colors.$black;
+                border-radius: 5px;
+                border: none;
+                color: colors.$white;
+                font-weight: 600;
+                margin-bottom: 1% auto;
+
+                &:hover {
+                    transform: scale(1.01)
+                }
+
+                &:focus {
+                    color: colors.$green;
+                }
+            }
+        }
+    }
+
+    .formula-input-holder {
+        @include default-inp.main();
+        // background-color: red;
+    }
+
+
+}

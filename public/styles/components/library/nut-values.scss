@@ -1,0 +1,36 @@
+@use "../../utils/colors.scss" as colors;
+@use "../../utils/flexColumn.scss" as flexColumn;
+
+
+.nutritional-values-component {
+    @include flexColumn.flexColumn();
+    margin: 10px 0;
+    text-align: left;
+
+    table {
+        border-collapse: collapse;
+    }
+
+    h3 {
+        margin: 5px 0;
+    }
+
+    th:first-child,
+    td:first-child {
+        padding-left: 5px;
+    }
+
+    thead {
+        height: 30px;
+        background-color: colors.$green;
+    }
+
+    td,
+    th {
+        text-transform: capitalize;
+    }
+
+    td:last-child {
+        text-transform: none;
+    }
+}

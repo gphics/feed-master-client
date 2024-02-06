@@ -1,0 +1,14 @@
+@use "../components/library/library-export.scss";
+@use "../utils/colors.scss" as colors;
+.each-library-page {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    width: 96vw;
+    font-size: .8em;
+    .heading{
+        background-color: colors.$green;
+        width:max-content;
+        padding:10px
+    }
+}

@@ -1,0 +1,29 @@
+@use "../../utils/colors.scss" as colors;
+
+.each-nut-req-component {
+    margin: 10px auto;
+    width: 98%;
+    padding: 10px;
+    background: colors.$black;
+    color: colors.$green;
+
+    &:hover {
+        border-radius: 5px;
+        transform: scale(1.02);
+    }
+
+    h4 {
+        text-transform: capitalize;
+        margin: 5px 0;
+    }
+
+    ul {
+        margin: 5px 0;
+        display: block;
+
+        li {
+            list-style: circle;
+            list-style-position: inside;
+        }
+    }
+}

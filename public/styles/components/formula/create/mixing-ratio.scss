@@ -1,0 +1,21 @@
+@use "../../../utils/colors.scss" as colors;
+@use "../../../utils/flexColumn.scss" as flexColumn;
+@use "../../../utils/btn.scss" as btnStyle;
+@use "../../../utils/is-mobile.scss" as mobile;
+@use "../../../utils/default-formula-input.scss" as def-inp;
+
+.mixing-ratio-form-part {
+    @include flexColumn.flexColumn();
+
+    h3 {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .formula-input-holder {
+        @include def-inp.main()
+    }
+         @include mobile.is-mobile() {
+             align-items: center;
+         }
+}

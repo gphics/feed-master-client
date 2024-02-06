@@ -1,0 +1,67 @@
+@use "../utils/colors.scss" as colors;
+@use "../utils/btn.scss" as btnStyle;
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/is-mobile.scss" as is-mobile;
+
+.auth-update-form {
+    margin: 15px 0;
+    // background: orange;
+    @include flexColumn.flexColumn();
+
+    h4 {
+        margin: 10px;
+    }
+
+    .auth-update-input-holder {
+        margin: 10px;
+        background-color: colors.$black;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        width: 300px;
+        border-radius: 15px;
+
+        input {
+            background-color: colors.$black;
+            height: 100%;
+            width: 90%;
+            flex: 1 1 auto;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border: none;
+            color: colors.$green;
+            font-weight: 600;
+            padding-left: 5px;
+
+            &:focus {
+                border: none;
+                outline: none
+            }
+
+            &:active {
+                transform: scale(1.02);
+            }
+
+        }
+
+        input[type="file"] {
+            text-align: center;
+            // background-color: red;
+            padding-top: 3.5%
+        }
+
+        .auth-update-icon {
+            margin: 0 10px;
+            color: colors.$white;
+        }
+    }
+    .auth-update-btn{
+        @include btnStyle.btnStyle();
+        width:100px;
+        padding:10px;
+        margin-left: 10px;
+        background-color: colors.$green;
+        color:colors.$black;
+        border: none;
+    }
+}

@@ -1,0 +1,105 @@
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/colors.scss" as colors;
+@use "../utils/btn.scss" as btnStyle;
+.single-formula-page {
+    margin: 10px auto;
+    width: 98vw;
+
+    .controls {
+        display: flex;
+        margin: 5px auto;
+        width: max-content;
+
+        .ctrl-btn {
+            @include btnStyle.btnStyle();
+            margin: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px;
+            &.del{
+                background-color: red;
+                color:colors.$black
+            }
+        }
+    }
+
+}
+
+.basic-formula-component {
+    @include flexColumn.flexColumn;
+    margin: 5px 0;
+
+    h4 {
+        margin: 5px 0;
+        font-size: .8em;
+    }
+
+    p {
+        &::first-letter {
+            text-transform: capitalize;
+        }
+
+        margin: 5px 0;
+        font-size: .9em;
+    }
+
+}
+
+.formula-table-component {
+    margin: 10px 0;
+    width: 100%;
+    overflow-x: scroll;
+
+
+    table {
+        border: none;
+        width: 150%;
+        border-collapse: collapse;
+
+        font-weight: 600;
+
+        thead,
+        tfoot {
+            height: 40px;
+            background-color: colors.$black;
+            color: colors.$green;
+
+
+
+            th:nth-child(1) {
+                width: 25%;
+                padding-left: 5px;
+
+            }
+
+            th {
+                width: 16%;
+                text-align: left;
+
+            }
+        }
+
+
+        tbody {
+            tr {
+                border-top: 5px solid white;
+                border-bottom: 5px solid white;
+
+                background-color: colors.$green;
+            }
+
+            tr:nth-child(even) {
+                background-color: colors.$overlay;
+            }
+
+            td {
+                padding: 5px 0 5px 5px;
+                border: none;
+                outline: none;
+                text-align: left;
+            }
+        }
+
+    }
+}

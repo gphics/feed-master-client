@@ -1,0 +1,57 @@
+@use "../../../utils/colors.scss" as colors;
+@use "../../../utils/flexColumn.scss" as flexColumn;
+@use "../../../utils/btn.scss" as btnStyle;
+@use "../../../utils/is-mobile.scss" as mobile;
+
+.feedstuff-form-part {
+    @include flexColumn.flexColumn();
+
+    header {
+        margin: 10px 0;
+
+        h3 {
+            text-align: center;
+            margin: 2px 0;
+        }
+
+        .add-input-btn {
+            @include btnStyle.btnStyle();
+            padding: 10px
+        }
+    }
+
+    main {
+        margin: 5px 0;
+        width: 100%;
+
+        @include flexColumn.flexColumn() {
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+
+        ;
+
+        @include mobile.is-mobile() {
+            flex-direction: column;
+
+            .select-input-holder {
+                width: 96%;
+
+                label {
+                    margin-left: 2%;
+                }
+
+                select {
+                    align-self: center;
+                    width: 96%;
+                }
+            }
+
+            .each-from-input {
+                width: 96%;
+                margin: 5px auto;
+            }
+        }
+
+    }
+}

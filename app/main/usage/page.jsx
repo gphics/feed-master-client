@@ -1,0 +1,17 @@
+
+
+function Usage() {
+  const arr = [
+    `  When you need to formulate a feed go to my formula page, you are going to see a create button there click on it and you wil be redirected to the formula creation page. The formula creation page present three forms. The first one is to collect basic feed-formula data like the name and description of the feed formula and all the fields are required. The second form is to collect the data of the feed ingredients to be used. The last one is the mixing ratio form used to collect the ingredients mixing ratio data.`,
+    `The second form is the feed ingredients form. By default you have two feed ingredients input and you can increase the number of feed ingredients input and also decrease it but the number of feed ingredients must not be less than two and the two must be one energy source and one protein source.  An energy source feed ingredient is the ingredient with crude protein level less than 20% while a protein source feed ingredient is the one with a crude protein level greater than 20%. For every formula there must be at least one energy source and one protein source or else the software will throw an error. Each feed ingredient input present four fields. The first one is the name which is required and you can either choose from the select field or click the button above the select field to write the name if the ingredient does not exist in the available select options. The second input field is the crude protein input field which get filled automatically with the crude protein value present on the webite when you use the select field input and if the provided value does not match the crude protein of your feed ingredient you can change it. In case of feed ingredient without crude protein level, you can omit this field. The third input field is for the price of a kg of the feed ingredient and this field is required. The last field is the quantity input field which is optional. When the quantity is provided, the ingredient is treated as a fixed ingredient and if not provided the ingredient is treated as a non-fixed ingredients. Fixed feed ingredients are ingredients either with a crude protein level or not that have their quantity provided already before the formula is generated and vice versa for non-fixed feed ingredients.`,
+    `The third form is the mixing ratio form. Most times feed formula uses more than one energy source and protein source. For example, a broiler starter feed is to be formulated using maize grain, sorghum and cassava peel as energy sources and soybean meal, fish meal and groundnut cake meal as protein sources. Each sources have three ingredients each. By default if the mixing ratio is not provided all the feed ingredients will be mixed equally i.e 1:1:1. Note the use of the ratio symbol ":" in the mixing ratio, any other symbol provided will not work and might result in an unpleasant result. You must not provide ratio unit less or more than the numbers of feed ingredients that you choose for a particular nutrient source.`
+  ]
+  return (
+    <div className="usage-page">
+      <h3>How to use Feed Master</h3>
+      {arr.map((elem, index)=> <p key={index}> {elem} </p>)}
+    </div>
+  )
+}
+
+export default Usage

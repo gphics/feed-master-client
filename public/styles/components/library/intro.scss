@@ -1,0 +1,25 @@
+@use "../../utils/colors.scss" as colors;
+@use "../../utils/flexColumn.scss" as flexColumn;
+@use "../../utils/is-mobile.scss" as is-mobile;
+.intro-component{
+    @include flexColumn.flexColumn();
+    margin:10px 0;
+    img{
+        margin:10px 0;
+        @include is-mobile.is-mobile(){
+            width:97%;
+            margin:10px auto;
+        }
+    }
+    h4{
+    
+        margin: 5px 0;
+    }
+    ul{
+        margin: 5px 2%;
+        li{
+            // display: inline;
+            list-style-position: inside;
+        }
+    }
+}

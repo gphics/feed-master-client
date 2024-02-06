@@ -1,0 +1,25 @@
+@use "./colors.scss" as colors;
+
+@font-face {
+    font-family: SemiBold;
+    src: url("../../fonts/Montserrat-SemiBold.ttf");
+}
+
+@mixin btnStyle() {
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: SemiBold;
+    background-color: colors.$black;
+    color: colors.$green;
+    margin: 5px 0;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover{
+        transform: scale(1.05);
+        color:colors.$white;
+    }
+    @content
+}

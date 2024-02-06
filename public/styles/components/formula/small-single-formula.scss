@@ -1,0 +1,29 @@
+@use "../../utils/colors.scss" as colors;
+@use "../../utils/flexRow.scss" as flexRow;
+
+
+.small-single-formula{
+    @include flexRow.flexRow;
+    cursor: pointer;
+    text-decoration: none;
+    color:colors.$green;
+    width:98%;
+    height: 50px;
+    justify-content: space-between;
+    padding:0 5px;
+    background-color: colors.$black;
+    align-items: center;
+    border-radius: 5px;
+    margin:10px auto;
+    &:hover{
+        transform: scale(1.01);
+        background-color: colors.$overlay;
+        box-shadow: 1px 2px 5px colors.$green;
+    }
+    h4{
+        width:33%;
+        text-align: left;
+        font-size: .8em;
+        // background-color: red;
+    }
+}

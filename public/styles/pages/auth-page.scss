@@ -1,0 +1,87 @@
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/is-mobile.scss" as is-mobile;
+@use "../utils/btn.scss" as btnStyle;
+
+.form-overlay {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: colors.$gradient;
+    @include flexColumn.flexColumn();
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-form {
+    width: 50%;
+    height: 50%;
+    max-width: 350px;
+    max-height: 400px;
+    background-color: colors.$green;
+    border-radius: 5px;
+    background: linear-gradient(90deg, colors.$green 50%, colors.$black 50%);
+
+    // media query
+    @include flexColumn.flexColumn() {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    ;
+
+    @include is-mobile.is-mobile() {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+
+.auth-input-holder {
+    width: 90%;
+    height: 15%;
+    border-radius: 20px;
+    background-color: colors.$white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: -5px 1px 10px colors.$black;
+    overflow: hidden;
+
+    @include is-mobile.is-mobile() {
+        // width: 90%;
+        height: 15%;
+    }
+
+    input {
+        width: 90%;
+        border: none;
+        height: 100%;
+        padding-left: 5px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-left: 2%;
+        font-weight: 600;
+        &:focus {
+            border: none;
+            outline: none;
+            color: colors.$green;
+            transform: scale(1.02);
+        }
+
+    }
+
+    .auth-icon {
+        transform: scale(1.5);
+        margin-left: 5%;
+        color: colors.$black;
+    }
+}
+
+.auth-btn {
+    @include btnStyle.btnStyle();
+    width: 60%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 3px 1px 5px colors.$overlay, -5px 1px 10px colors.$black;
+}

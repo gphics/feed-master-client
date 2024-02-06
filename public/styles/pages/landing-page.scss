@@ -1,0 +1,15 @@
+@use "../components/landingPage/landing-page-component-exports.scss";
+@use "../utils/flexColumn.scss" as flexColumn;
+@use "../utils/colors.scss" as colors;
+
+.landing-page {
+    margin: 10px auto;
+    width: 98%;
+    @include flexColumn.flexColumn;
+
+    overflow-x: hidden;
+
+    img {
+        width: 300px;
+    }
+}
