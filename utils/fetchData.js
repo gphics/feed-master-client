@@ -15,41 +15,42 @@ export default async function fetchData(
     if (method === "GET") {
       first = await fetch(api, {
         method,
-        credentials: "include",
+
         headers: { "Content-Type": "application/json" },
       });
     } else if (file) {
       first = await fetch(api, {
         method,
         body,
-        credentials: "include",
       });
     } else if (method === "DELETE") {
       first = await fetch(api, {
         method,
-        credentials: "include",
+
         headers: { "Content-Type": "application/json" },
       });
     } else {
       first = await fetch(api, {
         body: JSON.stringify(body),
         method,
-        credentials: "include",
+
         headers: { "Content-Type": "application/json" },
       });
     }
 
     const second = await first.json();
     if (second.err) {
-      return second
+      return second;
     }
-    console.log(second)
-      Cookies.set("_at_", second.data.auth_token, {
-        expires: 1,
-      });
-    
-    const { data:{data}} = second;
-    return {data, err:null};
+    console.log(second);
+    Cookies.set("_at_", second.data.auth_token, {
+      expires: 1,
+    });
+
+    const {
+      data: { data },
+    } = second;
+    return { data, err: null };
   } catch (error) {
     return { err: error, data: null };
   }
